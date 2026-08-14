@@ -10,7 +10,9 @@ export const FeedbackProvider = ({ children }) => {
   }, []);
   //Fetch feedback function
   const fetchFeedback = async () => {
-    const response = await fetch("https://6a7f55c33183f5fd884b0fc9.mockapi.io/feedback");
+    const response = await fetch(
+      "https://6a7f55c33183f5fd884b0fc9.mockapi.io/feedback",
+    );
     const data = await response.json();
     setFeedback(data);
     setIsloading(false);
@@ -18,11 +20,14 @@ export const FeedbackProvider = ({ children }) => {
   //delete feedbacks
   const deleteFeedback = async (id) => {
     if (window.confirm(`Are you sure you want to delete item number ${id}?`)) {
-      await fetch(`https://6a7f55c33183f5fd884b0fc9.mockapi.io/feedback/${id}`, {
-        method: "DELETE",
-      });
+      await fetch(
+        `https://6a7f55c33183f5fd884b0fc9.mockapi.io/feedback/${id}`,
+        {
+          method: "DELETE",
+        },
+      );
 
-       setFeedback(feedback.filter((item) => item.id !== id));
+      setFeedback(feedback.filter((item) => item.id !== id));
     }
   };
 
@@ -54,14 +59,19 @@ export const FeedbackProvider = ({ children }) => {
   };
   //update feedback item
   async function updateFeedbackFunc(id, updItem) {
-    const response = await fetch(`https://6a7f55c33183f5fd884b0fc9.mockapi.io/feedback/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updItem),
-    });
+    const response = await fetch(
+      `https://6a7f55c33183f5fd884b0fc9.mockapi.io/feedback/${id}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updItem),
+      },
+    );
     const data = response.json();
-    setFeedback(
-      feedback.map((item) => (item.id === id ? { ...item, ...data } : item)),
+    setFeedback((prevFeedback) =>
+      prevFeedback.map((item) =>
+        item.id === id ? { ...item, ...data } : item,
+      ),
     );
   }
 
