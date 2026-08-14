@@ -59,7 +59,7 @@ export const FeedbackProvider = ({ children }) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updItem),
     });
-    const data = response.JSON();
+    const data = response.json();
     setFeedback(
       feedback.map((item) => (item.id === id ? { ...item, ...data } : item)),
     );
