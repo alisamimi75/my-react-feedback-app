@@ -1,19 +1,58 @@
-# React + Vite
+# React Feedback App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive feedback application built with React as a practical project for learning and applying modern React concepts.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[View Live Demo](YOUR_DEPLOYED_URL)
 
-## React Compiler
+## 📌 Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- Add new feedback
+- Edit existing feedback
+- Delete feedback
+- Rating system from 1 to 10
+- Feedback statistics
+- Form validation
+- Loading state
+- Responsive layout
+- Animated feedback items
+- Client-side routing
+- REST API integration
 
-Note: This will impact Vite dev & build performances.
+## 🛠️ Technologies
 
-## Expanding the ESLint configuration
+- React
+- JavaScript
+- Tailwind CSS
+- React Router
+- Framer Motion
+- React Icons
+- Fetch API
+- JSON Server
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# my-react-feedback-app" 
+## 📂 Project Structure
+
+The project is organized into reusable React components and uses Context API for managing feedback-related state.
+
+## 🎯 What I Practiced
+
+This project helped me practice:
+
+- React components
+- Props
+- State management with `useState`
+- Context API
+- `useEffect`
+- Form handling and validation
+- CRUD operations with REST API
+- React Router
+- Responsive design with Tailwind CSS
+- Animations with Framer Motion
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
