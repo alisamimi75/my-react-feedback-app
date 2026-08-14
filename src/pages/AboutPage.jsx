@@ -8,15 +8,18 @@ const AboutPage = () => {
       <Card>
         <div>
           <h1 className="font-bold text-4xl mb-5">About this project.</h1>
-          <p className="text-nowrap">
+          <p className="">
             This is a ReactJS app to leave a feedback for any kind of product.
           </p>
           <h2>version: 1.0.0</h2>
-          <p className="text-nowrap">
-            Ali Samimi
-          </p>
+          <p className="">Ali Samimi</p>
           <p>
-            <Link to={"/"} className="text-blue-500 text-2xl hover:text-pink-400">BACK TO HOME</Link>
+            <Link
+              to={"/"}
+              className="text-blue-500 text-2xl hover:text-pink-400"
+            >
+              BACK TO HOME
+            </Link>
           </p>
         </div>
       </Card>
