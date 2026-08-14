@@ -10,28 +10,32 @@ export const FeedbackProvider = ({ children }) => {
   }, []);
   //Fetch feedback function
   const fetchFeedback = async () => {
-    const response = await fetch("http://localhost:5000/feedback");
+    const response = await fetch("https://6a7f55c33183f5fd884b0fc9.mockapi.io/feedback");
     const data = await response.json();
     setFeedback(data);
     setIsloading(false);
   };
   //delete feedbacks
-  const deleteFeedback =async (id) => {
+  const deleteFeedback = async (id) => {
     if (window.confirm(`Are you sure you want to delete item number ${id}?`)) {
-      await fetch(`http://localhost:5000/feedback/${id}` , {
-      method:"DELETE"
-    })
+      await fetch(`https://6a7f55c33183f5fd884b0fc9.mockapi.io/feedback/${id}`, {
+        method: "DELETE",
+      });
 
-
-    //  setFeedback(feedback.filter((item) => item.id !== id));
+      //  setFeedback(feedback.filter((item) => item.id !== id));
     }
   };
 
   //adding function globally
-  const addFeedback =async (newFeedback) => {
-    const response = await fetch("http://localhost:5000/feedback" , {
-      method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(newFeedback)
-    })
+  const addFeedback = async (newFeedback) => {
+    const response = await fetch(
+      "https://6a7f55c33183f5fd884b0fc9.mockapi.io/feedback",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newFeedback),
+      },
+    );
 
     const data = await response.json();
     setFeedback([data, ...feedback]);
@@ -50,10 +54,11 @@ export const FeedbackProvider = ({ children }) => {
   };
   //update feedback item
   async function updateFeedbackFunc(id, updItem) {
-    const response = await fetch(`http://localhost:5000/feedback/${id}`,{
-      method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify(updItem)
-      
-    })
+    const response = await fetch(`https://6a7f55c33183f5fd884b0fc9.mockapi.io/feedback/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updItem),
+    });
     const data = response.JSON();
     setFeedback(
       feedback.map((item) => (item.id === id ? { ...item, ...data } : item)),
