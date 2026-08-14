@@ -22,7 +22,7 @@ export const FeedbackProvider = ({ children }) => {
         method: "DELETE",
       });
 
-      //  setFeedback(feedback.filter((item) => item.id !== id));
+       setFeedback(feedback.filter((item) => item.id !== id));
     }
   };
 
